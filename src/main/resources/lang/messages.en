@@ -1,0 +1,7 @@
+INTERNAL_PROCESS_ERROR=internal server error
+INVALID_ARGUMENT=invalid argument
+DATABASE_CREATE_FAILED=database create failed
+DATABASE_DIRECTORY_NOT_FOUND=database directory not found
+IS_NOT_DIRECTORY=specify directory
+DATABASE_DIRECTORY_IS_NOT_EMPTY=directory is not empty
+UNABLE_MAKE_DIRECTORY=directory was not able to be made

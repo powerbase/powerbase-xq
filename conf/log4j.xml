@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+     <param name="Target" value="System.out" />
+     <param name="Threshold" value="DEBUG" />
+     <layout class="org.apache.log4j.PatternLayout">
+           <param name="ConversionPattern" value="%d{HH:mm:ss.SSS}[%p] %m%n"/>
+     </layout>
+  </appender>
+  <appender name="stderr" class="org.apache.log4j.ConsoleAppender">
+     <param name="Target" value="System.err" />
+     <param name="Threshold" value="DEBUG" />
+     <layout class="org.apache.log4j.PatternLayout">
+           <param name="ConversionPattern" value="%d{HH:mm:ss.SSS}[%p] %m%n"/>
+     </layout>
+  </appender>
+   <appender name="FILEOUT" class="org.apache.log4j.DailyRollingFileAppender">
+       <param name="File" value="${jp.powerbase.logs}/powerbase.log" />
+       <param name="Append" value="true" />
+       <layout class="org.apache.log4j.PatternLayout">
+           <param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss.SSS} [%p] %m%n"/>
+       </layout>
+   </appender>
+   <appender name="FILEOUT_IMPORTANT" class="org.apache.log4j.DailyRollingFileAppender">
+       <param name="File" value="${jp.powerbase.logs}/powerbase-error.log" />
+       <param name="Append" value="true" />
+       <param name="Threshold" value="ERROR" />
+       <layout class="org.apache.log4j.PatternLayout">
+           <param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss.SSS} [%p] %m%n"/>
+       </layout>
+   </appender>
+
+  <category name="org.apache.commons">
+    <priority value="error" />
+    <appender-ref ref="FILEOUT" />
+    <appender-ref ref="FILEOUT_IMPORTANT" />
+  </category>
+
+  <category name="httpclient.wire">
+    <priority value="error" />
+    <appender-ref ref="FILEOUT" />
+    <appender-ref ref="FILEOUT_IMPORTANT" />
+  </category>
+
+   <root>
+    <priority value="TRACE" />
+    <appender-ref ref="stderr"/>
+    <appender-ref ref="FILEOUT" />
+    <appender-ref ref="FILEOUT_IMPORTANT" />
+   </root>
+
+</log4j:configuration>

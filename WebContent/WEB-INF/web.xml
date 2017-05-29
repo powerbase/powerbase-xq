@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>powerbase-xq</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PowerBase</display-name>
+    <servlet-name>PowerBase</servlet-name>
+    <servlet-class>jp.powerbase.servlet.PowerBase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PowerBase</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Resource</display-name>
+    <servlet-name>Resource</servlet-name>
+    <servlet-class>jp.powerbase.servlet.Resource</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resource</servlet-name>
+    <url-pattern>/resource/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateDB</display-name>
+    <servlet-name>CreateDB</servlet-name>
+    <servlet-class>jp.powerbase.servlet.CreateDB</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateDB</servlet-name>
+    <url-pattern>/CreateDB</url-pattern>
+  </servlet-mapping>
+</web-app>
